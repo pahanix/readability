@@ -1,7 +1,39 @@
 module Readability
   module Readable
+    def title
+      harmony_page.document.title
+    end
+    
+    def parse string_or_io, url = nil, encoding = nil, options = Nokogiri::XML::ParseOptions::DEFAULT_HTML, &block
+      self.root = Nokogiri::HTML::Document.parse(string_or_io, url, encoding, options, &block).root
+    end
+    
+    def execute_js(code)
+      result = nil
+      
+      harmony_page do |page|
+        result = page.execute_js(code)
+      end
+      
+      result
+    end
+    alias :x :execute_js
+    
+    private
+    
     def harmony_page
-      @harmony_page ||= Harmony::Page.new(self.to_html)
+      # load document into a page
+      page = Harmony::Page.new(self.to_html)
+      
+      # yield the page and reparse if a block is given
+      if block_given?
+        yield page
+        
+        # parse the page back into the document
+        parse(page.to_html)
+      end
+      
+      page
     end
   end
 end
