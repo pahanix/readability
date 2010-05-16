@@ -2,6 +2,7 @@ require 'rubygems'
 require 'nokogiri'
 require 'harmony'
 
+require 'readability/harmonizable'
 require 'readability/readable'
 
 # Run the Arc90 Lab Experiment Readability on a Nokogiri document.
@@ -10,10 +11,8 @@ require 'readability/readable'
 module Readability
 end
 
-module Nokogiri
-  module HTML
-    class Document
-      include Readability::Readable
-    end
-  end
+class Nokogiri::HTML::Document
+  include Readability::Harmonizable
 end
+
+
