@@ -39,4 +39,12 @@ describe Readability::Readable do
     # readable version should not include the link to flickr
     @doc.to_html.should_not include "flickr.com/photos/mojombo"
   end
+  
+  it "can return the content only" do
+    content = @doc.to_readable(:content_only => false)
+    content.to_html.should include "Original Page"
+    
+    content = @doc.to_readable(:content_only => true)
+    content.to_html.should_not include "Original Page"
+  end
 end
