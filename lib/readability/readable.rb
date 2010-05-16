@@ -40,12 +40,12 @@ module Readability
         return readable_doc.at_css("#readInner")
       end
       
-      # return document
-      readable_doc
+      # return document root
+      readable_doc.root
     end
     
     def to_readable!(args = {})
-      self.root = to_readable(args).root
+      self.root = to_readable(args)
     end
   end
 end
