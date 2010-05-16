@@ -1,6 +1,8 @@
 = readability
 
-The readability gem makes it easy to run Arc90's Readability script in Ruby using Harmony. Harmony uses Johnson to run env.js in Ruby.
+The readability gem makes it easy to run Arc90's Readability script in Ruby using Nokogiri and Harmony. Harmony uses Johnson to run env.js in Ruby.
+
+TODO: Add example
 
 == Note on Patches/Pull Requests
  
