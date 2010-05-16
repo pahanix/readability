@@ -27,3 +27,4 @@ jeweler -v1.4.0
 
 # rspec
 rspec -v1.3.0
+syntax -v1.0.0
