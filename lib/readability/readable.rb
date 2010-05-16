@@ -1,7 +1,14 @@
 module Readability
   module Readable
-    def title
-      harmony_page.document.title
+    def window
+      if block_given?
+        harmony_page do |page|
+          yield page.window
+          page.window
+        end
+      else
+        harmony_page.window
+      end
     end
     
     def parse string_or_io, url = nil, encoding = nil, options = Nokogiri::XML::ParseOptions::DEFAULT_HTML, &block

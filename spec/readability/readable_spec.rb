@@ -10,18 +10,27 @@ describe Readability::Readable do
     Nokogiri::HTML::Document.include?(Readability::Readable).should be_true
   end
 
-  it "returns the title of the document" do
-    @doc.title.should == "TomDoc - Reasonable Ruby Documentation"   
+  it "allows access to the DOM" do
+    @doc.window.should_not be_nil
+    @doc.window.document.should_not be_nil
   end
   
+  it "allows changes to the DOM" do
+    @doc.window do |window|
+      window.document.title = "foobar"
+    end
+    
+    @doc.window.document.title.should == "foobar"
+  end
+
   it "executes javascript code on the document" do
     # check original title
-    @doc.execute_js('document.title').should == "TomDoc - Reasonable Ruby Documentation"
+    @doc.window.document.title.should == "TomDoc - Reasonable Ruby Documentation"
     
     # set new title
     @doc.execute_js("document.title = 'foobar'")
     
     # document.title should have new title
-    @doc.execute_js('document.title').should == "foobar"
+    @doc.window.document.title.should == "foobar"
   end
 end
