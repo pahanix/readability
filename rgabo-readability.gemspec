@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{rgabo-readability}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Gabor Ratky"]
   s.date = %q{2010-05-16}
-  s.description = %q{Extends Nokogiri::HTML::Document to run Arc90's Readability and procude easy to read HTML documents.}
+  s.description = %q{Extends Nokogiri::HTML::Document to run Arc90's Readability script and produces easy to read HTML documents.}
   s.email = %q{rgabo@rgabostyle.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "example.rb",
      "lib/readability.rb",
      "lib/readability/harmonizable.rb",
      "lib/readability/js/readability.js",
