@@ -12,6 +12,7 @@ begin
     gem.authors = ["Gabor Ratky"]
     gem.add_development_dependency "rspec", ">= 1.3.0"
     gem.add_runtime_dependency "harmony", "0.5.5"
+    gem.add_runtime_dependency "nokogiri", "~> 1.4"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

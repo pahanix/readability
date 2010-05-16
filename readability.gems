@@ -1,5 +1,8 @@
 # readability.gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
 
+# nokogiri
+nokogiri -v1.4.1
+
 # harmony (johnson & envjs)
 stackdeck -v0.2.0
 johnson -v2.0.0.pre3
@@ -21,3 +24,6 @@ git -v1.2.5
 json_pure -v1.4.3
 rubyforge -v2.0.4
 jeweler -v1.4.0
+
+# rspec
+rspec -v1.3.0
