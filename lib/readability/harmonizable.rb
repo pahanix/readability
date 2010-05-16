@@ -34,8 +34,6 @@ module Readability
       self
     end
     
-    private
-    
     def harmony_page
       # load document into a page
       page = Harmony::Page.new(self.to_html)
