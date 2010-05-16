@@ -25,6 +25,14 @@ module Readability
       result
     end
     alias :x :execute_js
+
+    def load_js(*paths)
+      harmony_page do |page|
+        page.load(*paths)
+      end
+      
+      self
+    end
     
     private
     
