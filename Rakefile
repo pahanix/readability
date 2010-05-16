@@ -6,7 +6,7 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "readability"
     gem.summary = %Q{arc90's readability running on ruby in harmony}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.description = %Q{rgabo-readability = arc90-readability + (harmony = johnson + env-js)}
     gem.email = "rgabo@rgabostyle.com"
     gem.homepage = "http://github.com/rgabo/readability"
     gem.authors = ["Gabor Ratky"]
