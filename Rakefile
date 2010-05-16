@@ -10,7 +10,8 @@ begin
     gem.email = "rgabo@rgabostyle.com"
     gem.homepage = "http://github.com/rgabo/readability"
     gem.authors = ["Gabor Ratky"]
-    gem.add_development_dependency "rspec", ">= 1.2.9"
+    gem.add_development_dependency "rspec", ">= 1.3.0"
+    gem.add_runtime_dependency "harmony", "0.5.5"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
@@ -41,7 +42,7 @@ begin
   end
 rescue LoadError
   task :reek do
-    abort "Reek is not available. In order to run reek, you must: sudo gem install reek"
+    abort "Reek is not available. In order to run reek, you must: gem install reek"
   end
 end
 
@@ -53,7 +54,7 @@ begin
   end
 rescue LoadError
   task :roodi do
-    abort "Roodi is not available. In order to run roodi, you must: sudo gem install roodi"
+    abort "Roodi is not available. In order to run roodi, you must: gem install roodi"
   end
 end
 
