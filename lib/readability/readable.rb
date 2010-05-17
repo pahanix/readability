@@ -40,8 +40,8 @@ module Readability
         page.load(File.join(File.dirname(__FILE__), 'js', 'readability.js'))
       end
       
-      # remove all linebreaks
-      readable_doc.remove('br')
+      # remove all linebreaks if needed
+      readable_doc.remove('br') if args[:remove_br]
       
       # remove footer if needed
       readable_doc.remove('#readFooter') if args[:remove_footer]
