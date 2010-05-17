@@ -16,14 +16,21 @@ module Readability
 
     attr_writer :read_style, :read_size, :read_margin
     
+    def unlink(*paths)
+      self.search(*paths).unlink
+    end
+    
+    alias :remove :unlink
+    
     def to_readable(args = {})
       args[:content_only] ||= false
       
       # dup document
       readable_doc = self.dup
       
-      # remove all script tags
-      readable_doc.xpath('//script').each { |node| node.remove }
+      # remove all script and iframe tags
+      readable_doc.remove('script')
+      readable_doc.remove('iframe')
       
       readable_doc.harmony_page do |page|
         # Set parameters

@@ -4,6 +4,7 @@ require 'open-uri'
 describe Readability::Harmonizable do
   before :each do
     @doc = Nokogiri::HTML(open(File.dirname(__FILE__) + '/../files/tomdoc-reasonable-ruby-documentation.html'))
+    @doc.remove('script')
   end
     
   it "extends Nokogiri::HTML::Document" do
