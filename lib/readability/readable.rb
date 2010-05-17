@@ -23,8 +23,6 @@ module Readability
     alias :remove :unlink
     
     def to_readable(args = {})
-      args[:content_only] ||= false
-      
       # dup document
       readable_doc = self.dup
       
@@ -44,6 +42,9 @@ module Readability
       
       # remove all linebreaks
       readable_doc.remove('br')
+      
+      # remove footer if needed
+      readable_doc.remove('#readFooter') if args[:remove_footer]
       
       # return <div id="readInner">...</div> if content_only
       if args[:content_only]

@@ -50,27 +50,16 @@ describe Readability::Readable do
     content = @doc.to_readable(:content_only => true)
     content.to_html.should_not include "Original Page"
   end
-end
-
-describe "Readability.js" do
-  class << self
-    def test_with(url)
-      self.class_eval do <<-EOF
-        def it "should work on #{url}" do
-          # load webpage
-          @doc = Nokogiri::HTML(open("#{url}"))
-
-          # run readability in place
-          @doc.to_readable!
-
-          @doc.to_html.should include('Readability version 1.5.0')
-        end
-  EOF
-      end
-    end
+  
+  it "can remove the footer" do
+    content = @doc.to_readable
+    content.to_html.should include "An Arc90 Laboratory Experiment"
+    
+    content = @doc.to_readable(:remove_footer => true)
+    content.to_html.should_not include "An Arc90 Laboratory Experiment"
   end
   
-  it "should not execute any Javascript" do
+  it "should not execute any Javascript in the document" do
     # load modified version of the tomdoc post
     @doc = Nokogiri::HTML(open(File.dirname(__FILE__) + '/../files/tomdoc-script_test.html'))
     
@@ -80,7 +69,9 @@ describe "Readability.js" do
     # check whether any script could change the title of the document
     @doc.window.document.title.should_not == "failed"  
   end
-  
+end
+
+describe "Readability.js" do
   it "should not fail on any article" do
     urls = YAML.load(File.open(File.join(File.dirname(__FILE__), 'urls.yaml')))
     
