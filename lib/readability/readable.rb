@@ -42,6 +42,9 @@ module Readability
         page.load(File.join(File.dirname(__FILE__), 'js', 'readability.js'))
       end
       
+      # remove all linebreaks
+      readable_doc.remove('br')
+      
       # return <div id="readInner">...</div> if content_only
       if args[:content_only]
         return readable_doc.at_css("#readInner")
