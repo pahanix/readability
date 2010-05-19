@@ -35,8 +35,19 @@ module Readability
     end
     
     def harmony_page
+      html = self.to_html
+
+      # unless encoding is already utf[-8], convert using iconv
+      unless meta_encoding =~ /utf/i
+        begin
+          require 'iconv'
+          html = Iconv.new("UTF8", "LATIN1//TRANSLIT//IGNORE").iconv(self.to_html)
+        rescue 
+        end
+      end
+      
       # load document into a page
-      page = Harmony::Page.new(self.to_html)
+      page = Harmony::Page.new(html)
       
       # yield the page and reparse if a block is given
       if block_given?

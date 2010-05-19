@@ -72,16 +72,28 @@ describe Readability::Readable do
 end
 
 describe "Readability.js" do
-  it "should not fail on any article" do
-    urls = YAML.load(File.open(File.join(File.dirname(__FILE__), 'urls.yaml')))
-    
-    urls.each do |url|
-      # load webpage
-      @doc = Nokogiri::HTML(open(url))
+  class << self
+    def should_not_fail_on url
+      self.class_eval <<-EOF
+      it "should not fail on #{url}" do
+        @doc = Nokogiri::HTML(open("#{url}"))
+
+        # run readability in place
+        @doc.to_readable!
       
+        @doc.to_html.should include('Readability version 1.5.0')
+      end
+      EOF
+    end
+  end
+  
+  YAML.load(File.open(File.join(File.dirname(__FILE__), 'urls.yaml'))).each do |url|
+    it "should not fail on #{url}" do
+      @doc = Nokogiri::HTML(open("#{url}"))
+
       # run readability in place
       @doc.to_readable!
-      
+    
       @doc.to_html.should include('Readability version 1.5.0')
     end
   end
