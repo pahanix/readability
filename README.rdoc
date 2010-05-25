@@ -31,4 +31,4 @@ Example:
 
 == Copyright
 
-Copyright (c) 2010 Gabor Ratky. See LICENSE for details.
+Copyright (c) 2010 Secret Sauce Partners, Inc. See LICENSE for details.

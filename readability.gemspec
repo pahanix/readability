@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{rgabo-readability}
+  s.name = %q{readability}
   s.version = "0.1.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Gabor Ratky"]
-  s.date = %q{2010-05-19}
+  s.authors = ["Secret Sauce Partners, Inc."]
+  s.date = %q{2010-05-25}
   s.description = %q{Extends Nokogiri::HTML::Document to run Arc90's Readability script and produces easy to read HTML documents.}
-  s.email = %q{rgabo@rgabostyle.com}
+  s.email = %q{github@secretsaucepartners.com}
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
      "lib/readability/js/readability.js",
      "lib/readability/readable.rb",
      "readability.gems",
-     "rgabo-readability.gemspec",
+     "readability.gemspec",
      "spec/files/change_title.js",
      "spec/files/script.js",
      "spec/files/techcrunch-article.html",
@@ -43,7 +43,7 @@ Gem::Specification.new do |s|
      "spec/spec.opts",
      "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/rgabo/readability}
+  s.homepage = %q{http://github.com/sspinc/readability}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
