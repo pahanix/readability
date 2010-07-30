@@ -7,11 +7,11 @@ begin
     gem.name = "readability"
     gem.summary = %Q{Run Arc90's Readability on Nokogiri documents}
     gem.description = %Q{Extends Nokogiri::HTML::Document to run Arc90's Readability script and produces easy to read HTML documents.}
-    gem.email = "github@secretsaucepartners.com"
+    gem.email = "gabor@secretsaucepartners.com"
     gem.homepage = "http://github.com/sspinc/readability"
-    gem.authors = ["Secret Sauce Partners, Inc."]
+    gem.authors = ["Gabor Ratky", "Secret Sauce Partners, Inc."]
     gem.add_development_dependency "rspec", ">= 1.3.0"
-    gem.add_runtime_dependency "harmony", "0.5.5"
+    gem.add_runtime_dependency "harmony", " ~> 0.5"
     gem.add_runtime_dependency "nokogiri", "~> 1.4"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end

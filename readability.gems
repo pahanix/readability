@@ -1,8 +1,0 @@
-# readability.gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
-
-nokogiri -v1.4.1
-harmony -v0.5.5
-tomdoc -v0.1.0
-jeweler -v1.4.0
-rspec -v1.3.0
-syntax -v1.0.0

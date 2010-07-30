@@ -9,7 +9,6 @@ require 'readability/harmonizable'
 require 'readability/readable'
 
 # Run the Arc90 Lab Experiment Readability on a Nokogiri document.
-# TODO: Add example
 #
 module Readability
   module Style
@@ -20,7 +19,7 @@ module Readability
     APERTURA = "style-apertura"
     ATHELAS = "style-athelas"
   end
-  
+
   module Size
     XSMALL = "size-x-small"
     SMALL = "size-small"
@@ -28,7 +27,7 @@ module Readability
     LARGE = "size-large"
     XLARGE = "size-x-large"
   end
-  
+
   module Margin
     XNARROW = "margin-x-narrow"
     NARROW = "margin-narrow"

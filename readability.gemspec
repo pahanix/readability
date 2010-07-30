@@ -8,10 +8,10 @@ Gem::Specification.new do |s|
   s.version = "0.1.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Secret Sauce Partners, Inc."]
-  s.date = %q{2010-05-25}
+  s.authors = ["Gabor Ratky", "Secret Sauce Partners, Inc."]
+  s.date = %q{2010-07-30}
   s.description = %q{Extends Nokogiri::HTML::Document to run Arc90's Readability script and produces easy to read HTML documents.}
-  s.email = %q{github@secretsaucepartners.com}
+  s.email = %q{gabor@secretsaucepartners.com}
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
@@ -61,16 +61,16 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<rspec>, [">= 1.3.0"])
-      s.add_runtime_dependency(%q<harmony>, ["= 0.5.5"])
+      s.add_runtime_dependency(%q<harmony>, ["~> 0.5"])
       s.add_runtime_dependency(%q<nokogiri>, ["~> 1.4"])
     else
       s.add_dependency(%q<rspec>, [">= 1.3.0"])
-      s.add_dependency(%q<harmony>, ["= 0.5.5"])
+      s.add_dependency(%q<harmony>, ["~> 0.5"])
       s.add_dependency(%q<nokogiri>, ["~> 1.4"])
     end
   else
     s.add_dependency(%q<rspec>, [">= 1.3.0"])
-    s.add_dependency(%q<harmony>, ["= 0.5.5"])
+    s.add_dependency(%q<harmony>, ["~> 0.5"])
     s.add_dependency(%q<nokogiri>, ["~> 1.4"])
   end
 end
