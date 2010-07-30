@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{readability}
-  s.version = "0.1.4"
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Gabor Ratky", "Secret Sauce Partners, Inc."]
@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
     ".document",
      ".gitignore",
      ".rvmrc",
+     "Gemfile",
      "LICENSE",
      "README.rdoc",
      "Rakefile",
@@ -29,7 +30,6 @@ Gem::Specification.new do |s|
      "lib/readability/harmonizable.rb",
      "lib/readability/js/readability.js",
      "lib/readability/readable.rb",
-     "readability.gems",
      "readability.gemspec",
      "spec/files/change_title.js",
      "spec/files/script.js",
